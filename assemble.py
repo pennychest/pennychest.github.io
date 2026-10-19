@@ -50,7 +50,7 @@ def rewrite_links(text, source, pages, root):
 def main(core, plugins):
     names = sorted(
         d.name for d in plugins.iterdir()
-        if (d / "pyproject.toml").is_file() and (d / "README.md").is_file()
+        if (d / "Cargo.toml").is_file() and (d / "README.md").is_file()
     )
     pages = {"README.md": "index.md"} | {f"{name}/README.md": f"{name}.md" for name in names}
 
